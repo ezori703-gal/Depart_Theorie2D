@@ -21,7 +21,7 @@ public class Laser : MonoBehaviour
 
     private void Start()
     {
-        // À COMPLÉTER 5.1 : donner sa vitesse au laser
+        _rb.linearVelocity = _direction.normalized * _speed;
         _limitY = Camera.main.orthographicSize + OffScreenMargin;
     }
 

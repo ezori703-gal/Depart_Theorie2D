@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,7 +134,403 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: PlayerTurn_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 235
+        width: 164
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46d41afcae6dd864d8848265a1c89446
+      internalID: -189536011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerTurn_1
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 233
+        width: 165
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f31c6b5b3063c044b870f46aca8b877e
+      internalID: -1838974701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerTurn_2
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 234
+        width: 160
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd8d22f2d45746743b4eb1b892cdcdc9
+      internalID: 357252504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerTurn_3
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 231
+        width: 163
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 270ff9ff38e2d1c4cbcdca22fb9d7cfa
+      internalID: -2093839670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerTurn_4
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 229
+        width: 160
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee86c4f09a9dc044488420558cc59a4f
+      internalID: 536282883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerTurn_5
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 230
+        width: 156
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3694b0467c577541a01519727417d3b
+      internalID: -408162862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerTurn_6
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 226
+        width: 148
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3849db1e028543b4fabd6d819824c10a
+      internalID: 325258093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerTurn_7
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 226
+        width: 139
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1841a06637702924bab11b063a0468f8
+      internalID: 677048906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerTurn_8
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 225
+        width: 131
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92ed526454af7034fa6f24ca1f1dba71
+      internalID: -1926293182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerTurn_9
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 11
+        width: 164
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e8fee6e20891974a875d2f57ecb4269
+      internalID: 630888562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerTurn_10
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 9
+        width: 165
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57817d84fb89b5148b76607ae7542775
+      internalID: 856157960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerTurn_11
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 10
+        width: 160
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51cadb2dff45ac54089c8cb9176b4c16
+      internalID: -634783889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerTurn_12
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 7
+        width: 163
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bc2670716aae9a479260d26052bee20
+      internalID: 1443463374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerTurn_13
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 7
+        width: 159
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 743f9cf9292008844bcdb3ef6c94e6db
+      internalID: 1814891403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerTurn_14
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 6
+        width: 155
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07b179d291370a04c9aaee0d488d9d1a
+      internalID: 954651633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerTurn_15
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 2
+        width: 147
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 129501909f6d2e849aee8a36fcf9eb63
+      internalID: -1430976826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerTurn_16
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 2
+        width: 139
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6462d5401bedd47836e8275ebee7c6
+      internalID: 286721107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerTurn_17
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 1
+        width: 133
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d7dd859249675d45b599b8a88bea479
+      internalID: 1650431868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -147,8 +543,28 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      PlayerTurn_0: -189536011
+      PlayerTurn_1: -1838974701
+      PlayerTurn_10: 856157960
+      PlayerTurn_11: -634783889
+      PlayerTurn_12: 1443463374
+      PlayerTurn_13: 1814891403
+      PlayerTurn_14: 954651633
+      PlayerTurn_15: -1430976826
+      PlayerTurn_16: 286721107
+      PlayerTurn_17: 1650431868
+      PlayerTurn_2: 357252504
+      PlayerTurn_3: -2093839670
+      PlayerTurn_4: 536282883
+      PlayerTurn_5: -408162862
+      PlayerTurn_6: 325258093
+      PlayerTurn_7: 677048906
+      PlayerTurn_8: -1926293182
+      PlayerTurn_9: 630888562
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
