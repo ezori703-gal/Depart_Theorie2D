@@ -77,7 +77,25 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        // À COMPLÉTER 6.2 : réagir au laser, au joueur ou à un autre ennemi
+        if (other.TryGetComponent<Laser>(out Laser laser))
+        {
+            Destroy(laser.gameObject);
+            Killed?.Invoke(_points);
+            Explode();
+        }
+
+        else if (other.TryGetComponent<Player>(out Player player))
+        {
+            player.TakeDamage();
+            Explode();
+        }
+        else if (other.TryGetComponent<Enemy>(out Enemy enemy))
+        {
+            if (_rb.position.y > _screenTopY)
+            {
+                MoveToTop();
+            }
+        }
     }
 
     private void Explode()

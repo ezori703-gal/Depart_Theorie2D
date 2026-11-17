@@ -51,13 +51,30 @@ public class SpawnManager : MonoBehaviour
         _halfWidth = halfScreenWidth - SpawnMarginX;
         _spawnY = mainCamera.orthographicSize + SpawnMarginY;
 
-        // À COMPLÉTER 7.2 : lancer la coroutine des ennemis
+        StartCoroutine(SpawnEnemiesRoutine());
+        
+
         /* BLOC 13-4.3 À ACTIVER : effacez cette ligne et la ligne de fin du bloc
         StartCoroutine(SpawnPowerUpsRoutine());
         FIN DU BLOC 13-4.3 : effacez cette ligne */
     }
 
-    // À COMPLÉTER 7.2 : la coroutine des vagues d'ennemis
+    private IEnumerator SpawnEnemiesRoutine()
+    {
+        yield return new WaitForSeconds(_firstEnemyDelay);
+
+
+
+        while (_isSpawning)
+        {
+
+            float x = Random.Range(-_halfWidth, _halfWidth);
+            Vector2 position = new Vector2(x, _spawnY);
+            Instantiate(_enemyPrefab, position, Quaternion.identity, _enemyContainer);
+            float delay = Random.Range(_minEnemyDelay, _maxEnemyDelay);
+            yield return new WaitForSeconds(delay);
+        }
+    }
 
     /* BLOC 13-4.3 À ACTIVER : effacez cette ligne et la ligne de fin du bloc
     private IEnumerator SpawnPowerUpsRoutine()
