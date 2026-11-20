@@ -1,16 +1,20 @@
 ﻿using System;
+using TMPro;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
-    // À COMPLÉTER 9.2 : les noms des paramètres de l'Animator et le seuil
+    private const string TurnLeftParameter = "TurnLeft";
+    private const string TurnRightParameter = "TurnRight";
 
     [Header("Déplacement")]
     [Tooltip("Vitesse du vaisseau, en unités par seconde")]
     [SerializeField] private float _moveSpeed = 8f;
     [Tooltip("Hauteur maximale du vaisseau, en unités du monde")]
     [SerializeField] private float _maxHeight = 0f;
+    [SerializeField] private float _turnThreshold = 0.1f;
 
     [Header("Tir")]
     [SerializeField] private Laser _laserPrefab;
@@ -35,7 +39,7 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D _rb;
     private GameInput _gameInput;
-    // À COMPLÉTER 9.2 : l'Animator du visuel
+    private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private Vector2 _moveInput;
     private Vector2 _minPosition;
@@ -61,12 +65,11 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        _rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponentInChildren<Rigidbody2D>();
         // Un seul GameInput dans la scène : le code le trouve lui-même
         _gameInput = FindAnyObjectByType<GameInput>();
 
-        // Le visuel est un enfant du joueur, comme au cours 5
-        // À COMPLÉTER 9.2 : récupérer l'Animator du visuel
+        _animator = GetComponentInChildren<Animator>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         _lives = _maxLives;
@@ -99,7 +102,10 @@ public class Player : MonoBehaviour
     {
         // Entrées lues à chaque image ; le déplacement attend FixedUpdate
         _moveInput = _gameInput.GetMovementVectorNormalized();
-        // À COMPLÉTER 9.2 : transmettre le déplacement à l'Animator
+        
+
+        _animator.SetBool(TurnLeftParameter, _moveInput.x < -_turnThreshold);
+        _animator.SetBool(TurnRightParameter, _moveInput.x > _turnThreshold);
 
         // Tir continu tant que le bouton reste enfoncé
         if (_isFireHeld && Time.time >= _nextFireTime)

@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
+    private const string TurnLeftParameter = "TurnLeft";
+    private const string TurnRightParameter = "TurnRight";
+
     [Header("Textes")]
     [Tooltip("Texte du pointage")]
     [SerializeField] private TMP_Text _scoreText;
