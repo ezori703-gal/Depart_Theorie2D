@@ -1,20 +1,16 @@
 ﻿using System;
-using TMPro;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
-    private const string TurnLeftParameter = "TurnLeft";
-    private const string TurnRightParameter = "TurnRight";
+    // À COMPLÉTER 9.2 : les noms des paramètres de l'Animator et le seuil
 
     [Header("Déplacement")]
     [Tooltip("Vitesse du vaisseau, en unités par seconde")]
     [SerializeField] private float _moveSpeed = 8f;
     [Tooltip("Hauteur maximale du vaisseau, en unités du monde")]
     [SerializeField] private float _maxHeight = 0f;
-    [SerializeField] private float _turnThreshold = 0.1f;
 
     [Header("Tir")]
     [SerializeField] private Laser _laserPrefab;
@@ -30,6 +26,8 @@ public class Player : MonoBehaviour
 
 
 
+    
+    
     /* BLOC 13-4.4 À ACTIVER : effacez cette ligne et la ligne de fin du bloc
     [Tooltip("Délai entre deux tirs pendant le tir rapide, en secondes")]
     [SerializeField] private float _rapidFireDelay = 0.1f;
@@ -39,7 +37,7 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D _rb;
     private GameInput _gameInput;
-    private Animator _animator;
+    // À COMPLÉTER 9.2 : l'Animator du visuel
     private SpriteRenderer _spriteRenderer;
     private Vector2 _moveInput;
     private Vector2 _minPosition;
@@ -65,11 +63,12 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        _rb = GetComponentInChildren<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
         // Un seul GameInput dans la scène : le code le trouve lui-même
         _gameInput = FindAnyObjectByType<GameInput>();
 
-        _animator = GetComponentInChildren<Animator>();
+        // Le visuel est un enfant du joueur, comme au cours 5
+        // À COMPLÉTER 9.2 : récupérer l'Animator du visuel
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         _lives = _maxLives;
@@ -102,10 +101,7 @@ public class Player : MonoBehaviour
     {
         // Entrées lues à chaque image ; le déplacement attend FixedUpdate
         _moveInput = _gameInput.GetMovementVectorNormalized();
-        
-
-        _animator.SetBool(TurnLeftParameter, _moveInput.x < -_turnThreshold);
-        _animator.SetBool(TurnRightParameter, _moveInput.x > _turnThreshold);
+        // À COMPLÉTER 9.2 : transmettre le déplacement à l'Animator
 
         // Tir continu tant que le bouton reste enfoncé
         if (_isFireHeld && Time.time >= _nextFireTime)
@@ -189,11 +185,11 @@ public class Player : MonoBehaviour
     private void ComputeLimits()
     {
         Camera mainCamera = Camera.main;
-
         Vector2 bottomLeft = mainCamera.ViewportToWorldPoint(Vector2.zero);
         Vector2 topRight = mainCamera.ViewportToWorldPoint(Vector2.one);
 
         Vector2 halfSize = _spriteRenderer.bounds.extents;
+
         _minPosition = bottomLeft + halfSize;
         _maxPosition = new Vector2(topRight.x - halfSize.x, _maxHeight);
     }

@@ -77,21 +77,20 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        if (other.TryGetComponent<Laser>(out Laser laser))
+        if(other.TryGetComponent<Laser>(out Laser laser))
         {
             Destroy(laser.gameObject);
             Killed?.Invoke(_points);
             Explode();
         }
-
-        else if (other.TryGetComponent<Player>(out Player player))
+        else if(other.TryGetComponent<Player>(out Player player))
         {
             player.TakeDamage();
             Explode();
         }
-        else if (other.TryGetComponent<Enemy>(out Enemy enemy))
+        else if(other.TryGetComponent<Enemy>(out Enemy enemy))
         {
-            if (_rb.position.y > _screenTopY)
+            if(_rb.position.y > _screenTopY)
             {
                 MoveToTop();
             }
