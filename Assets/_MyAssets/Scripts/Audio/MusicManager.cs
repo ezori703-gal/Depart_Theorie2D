@@ -8,8 +8,13 @@ public class MusicManager : MonoBehaviour
 {
     public static MusicManager Instance { get; private set; }
 
+    private AudioSource _audioSource;
+
+
     private void Awake()
     {
+
+        _audioSource = GetComponent<AudioSource>();
         // Au retour au menu, un deuxième apparaît : pas de musique en double
         if (Instance != null && Instance != this)
         {
@@ -19,5 +24,9 @@ public class MusicManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        
     }
+
+
 }

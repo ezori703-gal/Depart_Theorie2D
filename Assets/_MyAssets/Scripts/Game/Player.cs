@@ -1,5 +1,7 @@
 ﻿using System;
 using UnityEngine;
+using Unity.Cinemachine;
+
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
@@ -17,6 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform _firePoint;
     [Tooltip("Délai minimal entre deux tirs, en secondes")]
     [SerializeField] private float _fireDelay = 0.3f;
+    [SerializeField] private AudioClip _fireSound;
 
     [Header("Vies")]
     [Tooltip("Nombre de vies au début de la partie")]
@@ -24,6 +27,7 @@ public class Player : MonoBehaviour
     [Tooltip("Explosion créée à la destruction du vaisseau")]
     [SerializeField] private GameObject _explosionPrefab;
 
+    [SerializeField] private GameObject[] _damageEffects;
 
 
     
@@ -45,6 +49,10 @@ public class Player : MonoBehaviour
     private float _nextFireTime;
     private bool _isFireHeld;
     private int _lives;
+    private AudioSource _audioSource;
+
+
+    private CinemachineImpulseSource _impulseSource;
     /* BLOC 13-4.4 À ACTIVER : effacez cette ligne et la ligne de fin du bloc
     private float _currentFireDelay;
     private bool _hasShield;
@@ -63,7 +71,10 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        _impulseSource = GetComponent<CinemachineImpulseSource>();
         _rb = GetComponent<Rigidbody2D>();
+
+        _audioSource = GetComponent<AudioSource>();
         // Un seul GameInput dans la scène : le code le trouve lui-même
         _gameInput = FindAnyObjectByType<GameInput>();
 
@@ -146,11 +157,20 @@ public class Player : MonoBehaviour
         _lives--;
         LivesChanged?.Invoke(_lives);
 
+        int damageIndex = _maxLives - _lives - 1;
+
+        if(damageIndex < _damageEffects.Length)
+        {
+            _damageEffects[damageIndex].SetActive(true);
+        }
+
         if (_lives > 0)
         {
             return;
         }
 
+
+        _impulseSource.GenerateImpulse();
         Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
         Died?.Invoke();
         Destroy(gameObject);
@@ -169,6 +189,7 @@ public class Player : MonoBehaviour
     private void Fire()
     {
         Instantiate(_laserPrefab, _firePoint.position, Quaternion.identity);
+        _audioSource.PlayOneShot(_fireSound);
         _nextFireTime = Time.time + _fireDelay;
     }
 
